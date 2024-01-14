@@ -10,39 +10,39 @@ This library is designed to work as a part of a Python project. Perfect for appl
 To use ccontrol, you will need to ensure that you have Python installed on your system. No additional packages or curses-specific modules are required to be mentioned as dependencies for the basic running of ccontrol.
 ## Quick Start
 Here's a quick example on how you can utilize the ccontrol library:
-
+```
 import ccontrol
 
-\# Initialize the screen with default settings
-stdscr = ccontrol.initialize\_screen()
+# Initialize the screen with default settings
+stdscr = ccontrol.initialize_screen()
 
 try:
-`    `# Display text at a specific location with color and bold style
-`    `ccontrol.text(stdscr, x=10, y=5, text="Hello, ccontrol!", color\_pair=ccontrol.BLUE, style=ccontrol.BOLD)
+    # Display text at a specific location with color and bold style
+    ccontrol.text(stdscr, x=10, y=5, text="Hello, ccontrol!", color_pair=ccontrol.BLUE, style=ccontrol.BOLD)
 
-`    `# Create an input box for user input
-`    `user\_input = ccontrol.input\_box(stdscr, x=10, y=10, width=20, title="Input:")
-`    `print("User input:", user\_input)
+    # Create an input box for user input
+    user_input = ccontrol.input_box(stdscr, x=10, y=10, width=20, title="Input:")
+    print("User input:", user_input)
 
-`    `# Wait for a key press
-`    `key = ccontrol.get\_key(stdscr)
-`    `print("Key pressed:", key)
+    # Wait for a key press
+    key = ccontrol.get_key(stdscr)
+    print("Key pressed:", key)
 
 finally:
-`    `# Make sure to end the ccontrol application
-`    `ccontrol.exit\_programm()
-
+    # Make sure to end the ccontrol application
+    ccontrol.exit_programm()
+```
 Note that while the ccontrol library uses the curses module internally, its API abstracts away the curses-specific details, providing a straightforward interface for building text user interfaces.
 ## Documentation
 Functions provided by ccontrol include, but are not limited to:
 
-- initialize\_screen:
+- initialize_screen:
   Accepts various boolean flags to customize terminal settings such as hiding the cursor or enabling the keypad for special keys.
 - text:
   Outputs text at a given screen location with the provided colors and styling attributes.
-- input\_box:
+- input_box:
   Renders a simple input box at the specified screen location and accepts user input.
-- get\_key:
+- get_key:
   Waits for a user key press and returns the pressed key's keycode.
 ## Color and Style Constants
 The ccontrol library comes with predefined constants for colors and text attributes:
